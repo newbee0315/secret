@@ -46,3 +46,7 @@ if ra == '提交':
     st.subheader('不错不错 本次表现棒棒下次继续保持哦:sunglasses:')
     st.write('现在完整记录如下:')
     st.dataframe(datas[cols])
+if st.button('删除最后一行记录'):
+    datas[:-1].to_excel('a.xlsx')
+    st.write('下面是更新后的结果')
+    st.dataframe(datas[cols])
