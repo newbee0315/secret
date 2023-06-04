@@ -47,6 +47,7 @@ if ra == '提交':
     st.write('现在完整记录如下:')
     st.dataframe(datas[cols])
 if st.button('删除最后一行记录'):
+    datas = pd.read_excel('a.xlsx')
     datas[:-1].to_excel('a.xlsx')
     st.write('下面是更新后的结果')
     st.dataframe(datas[cols])
