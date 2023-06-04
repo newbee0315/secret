@@ -40,6 +40,7 @@ new = pd.DataFrame(columns=cols,data=np.array([now,c1,c2,c3,c4,c5]).reshape(1,-1
 #st.dataframe(new)
 #st.write('请确认，没有问题就提交吧，本次表现棒棒下次继续保持哦！')
 ra = st.radio('请选择是否提交',['输入状态','提交'])
+
 if ra == '提交':
     datas = hdata.append(new)
     datas.to_excel('a.xlsx')
@@ -48,6 +49,9 @@ if ra == '提交':
     st.dataframe(datas[cols])
 if st.button('删除最后一行记录'):
     datas = pd.read_excel('a.xlsx')
-    datas[:-1].to_excel('a.xlsx')
-    st.write('下面是更新后的结果')
-    st.dataframe(datas[cols])
+    if len(datas) > 1:
+        datas[:-1].to_excel('a.xlsx')
+        st.write('下面是更新后的结果')
+        st.dataframe(datas[cols])
+    else:
+        st.warning('不能再删了')
