@@ -33,7 +33,7 @@ with col2:
 with col3:
     c3 = st.selectbox('规格',(1,3,5,10,15,20))
 with col4:
-    c4 = st.selectbox('剩余个数',(1,2,3,4,5,6,7,8,9,10))
+    c4 = st.selectbox('剩余个数',(01,2,3,4,5,6,7,8,9,10))
 with col5:
     c5 = st.text_input('备注')
 new = pd.DataFrame(columns=cols,data=np.array([now,c1,c2,c3,c4,c5]).reshape(1,-1))
