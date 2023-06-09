@@ -13,7 +13,7 @@ j = pigs[i]
 #print(os.listdir('images'))
 img_sphere = Image.open("images//"+ j)
 
-st.subheader('翁大人，下面是今天我为你精心挑选的小狗：')
+st.subheader('翁大人，下面是今天我为你精心挑选的小猫小狗：')
 st.image(img_sphere)
 #获取当天日期
 cols = ['日期','使用个数','包装批次','规格','剩余个数','备注']
