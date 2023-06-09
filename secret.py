@@ -4,11 +4,17 @@ import datetime
 import pandas as pd
 import time
 import numpy as np
+import random
+import os
 
-img_sphere = Image.open("images/xiaogou.jpeg")
+pigs = os.listdir('images')
+i = random.randint(0,len(pigs))
+j = pigs[i]
+#print(os.listdir('images'))
+img_sphere = Image.open("images//"+ j)
 
 st.subheader('翁大人，下面是今天我为你精心挑选的小狗：')
-st.image(img_sphere,width=350)
+st.image(img_sphere)
 #获取当天日期
 cols = ['日期','使用个数','包装批次','规格','剩余个数','备注']
 data = pd.DataFrame(columns=['日期','使用个数','包装批次','规格','剩余个数','备注'],\
