@@ -21,9 +21,9 @@ st.dataframe(hdata[cols])
 now = datetime.datetime.now().strftime('%Y-%m-%d')
 lastday = hdata['日期']
 l = hdata['日期'].max()
-st.write(l)
-days = (datetime.datetime.strptime(now,'%Y-%m-%d')-datetime.datetime.strptime(l,'%Y-%m-%d')).days
-st.write('尊敬的主人您好，今天是'+now+'据我所知你们上次嘿嘿的日子是'+l+'距离上次已经有'+str(days)+'天啦')
+st.write(str(l).split(' ')[0])
+days = (datetime.datetime.strptime(now,'%Y-%m-%d')-datetime.datetime.strptime(str(l).split(' ')[0],'%Y-%m-%d')).days
+st.write('尊敬的主人您好，今天是'+now+'据我所知你们上次嘿嘿的日子是'+str(l).split(' ')[0]+'距离上次已经有'+str(days)+'天啦')
 st.write('请输入本次数据')
 col1,col2,col3,col4,col5 = st.columns(5)
 with col1:
