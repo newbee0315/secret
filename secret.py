@@ -8,7 +8,7 @@ import random
 import os
 
 pigs = os.listdir('images')
-i = random.randint(0,len(pigs))
+i = random.randint(0,len(pigs)-1)
 j = pigs[i]
 #print(os.listdir('images'))
 img_sphere = Image.open("images//"+ j)
